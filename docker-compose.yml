@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: . # Refers to the current directory containing the Dockerfile
+    ports:
+      - "3000:80" # Maps port 80 inside the container to port 3000 on the host
+    volumes:
+      - ./build:/usr/share/nginx/html # Binds the build directory for updates without rebuilding
+
